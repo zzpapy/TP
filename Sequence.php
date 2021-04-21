@@ -20,10 +20,7 @@
                 }
             }
         }
-        return $pos;
-
-        //test pour git
-
-      
+        return $pos;      
     };
+    //test
     echo search_pos_word($content,  $seq);
