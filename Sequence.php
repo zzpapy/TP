@@ -1,30 +1,29 @@
 <?php
     $content = [2,1,4,2, 6, 1, 2, 3, 7];
-    $seq = [1,2,3]; 
+    $seq = [2,3,7]; 
      function search_pos_word($content,$seq){
         $pos = 0;
-        foreach ($content as $key => $value) {
-            $i = 0;
-            if($seq[0] == $value){
-                $pos = $key;
-                $i = 0;
 
-                while($i < count($seq)){
-                    if($seq[$i] == $content[$key + 1]){
-                        if($seq[$i] == $content[$key + 1]){
-                            echo PHP_EOL . "tata " . $content[$key + 2] ;
-                            // continue;
+        for ($i=0; $i < count($content); $i++) { 
+            $j = 0;
+            if($seq[$j] == $content[$i]){
+                while($j < count($seq)){
+                    // echo $content[$i] .PHP_EOL;
+                    $pos = $i;
+                    if($seq[$j] == $content[$i + 1]){
+                        // echo $content[$i + 1] .PHP_EOL;
+                        $j++;
+                        if($seq[$j] == $content[$i + 2]){
+                            break;
+                            // echo $content[$i + 2] . " b " .PHP_EOL;
                         }
-                        // echo PHP_EOL . "tata " . $seq[$i] ;
-                        // continue;
                     }
-                    $i++;
+                    
+                    $j++;
                 }
             }
-            else{
-                
-                echo(PHP_EOL ."toto " . $value. " " . $pos);
-            }
         }
+        echo $pos;
+      
     };
-    search_pos_word($content,  $seq);
+    echo search_pos_word($content,  $seq);
