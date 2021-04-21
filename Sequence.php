@@ -21,7 +21,9 @@
             }
         }
         echo $pos;
-        
+
+        //test pour git
+
       
     };
     echo search_pos_word($content,  $seq);
